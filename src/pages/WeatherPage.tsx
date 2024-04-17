@@ -3,6 +3,7 @@ import { Container } from "../components/Container/Container";
 import { useAppDispatch, useAppSelector } from "../hooks/hooks";
 import { doGetWeatherByCity } from "../store/slices/weather.slice";
 import Header from "../components/Header/Header";
+import Main from "../components/Main/Main";
 
 const WeatherPage: React.FC = () => {
   const { weather } = useAppSelector((state) => state.weather);
@@ -18,6 +19,7 @@ const WeatherPage: React.FC = () => {
   return (
     <Container>
       <Header />
+      <Main></Main>
     </Container>
   );
 };

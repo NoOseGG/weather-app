@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const HeaderContainer = styled.div`
+const Wrapper = styled.header`
   width: 100%;
   height: 100px;
   display: flex;
@@ -11,10 +11,10 @@ const HeaderContainer = styled.div`
 
 const Header = () => {
   return (
-    <HeaderContainer>
+    <Wrapper>
       <div>Logo</div>
       <div>Menu</div>
-    </HeaderContainer>
+    </Wrapper>
   );
 };
 
