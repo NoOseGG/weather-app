@@ -1,19 +1,19 @@
+@import url(./styles/reset.css);
 @import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
-@import-normalize;
 
 :root {
   /* typography */
-  --heading-xs: 14px/1.4 bold;
-  --heading-sm: 16px/1.4 bold;
-  --heading-md: 20px/1.4 bold;
-  --heading-lg: 32px/1.4 bold;
-  --heading-xl: 48px/1.2 extrabold;
-  --heading-hg: 96px/1 extrabold;
+  --heading-xs: normal normal 700 14px/1.4 "Nunito", san-serif;
+  --heading-sm: normal normal 700 16px/1.4 "Nunito", san-serif;
+  --heading-md: normal normal 700 20px/1.4 "Nunito", san-serif;
+  --heading-lg: normal normal 700 32px/1.4 "Nunito", san-serif;
+  --heading-xl: normal normal 800 48px/1.2 "Nunito", san-serif;
+  --heading-hg: normal normal 800 96px/1 "Nunito", san-serif;
 
-  --text-xs: 12px/1.4 normal;
-  --text-sm: 14px/1.4 normal;
-  --text-md: 16px/1.4 normal;
-  --text-lg: 20px/1.4 normal;
+  --text-xs: normal normal 400 12px/1.4 "Nunito", san-serif;
+  --text-sm: normal normal 400 14px/1.4 "Nunito", san-serif;
+  --text-md: normal normal 400 16px/1.4 "Nunito", san-serif;
+  --text-lg: normal normal 400 20px/1.4 "Nunito", san-serif;
 
   /* colors */
   --color-white: #ffffff;
@@ -28,14 +28,16 @@
   --color-gray-900: #13131a;
   --color-blue-light: #8fb2f5;
 
+  /* font-family */
+  --family: "Nunito", sans-serif;
 
-  /* font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif; */
-  font-family: "Nunito", sans-serif;
+  --radii: 8px;
+
   line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
+  color: var(--color-white);
   background-color: #242424;
 
   font-synthesis: none;
@@ -44,43 +46,24 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+html,
+body {
+  height: 100%;
 }
 
 body {
   margin: 0;
-  min-height: 100vh;
-  background-color: aquamarine;
+  padding: 0;
+  font-family: var(--family);
+  color: var(--color-white);
+  background-image: url("./assets//images/background.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  user-select: none;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+#root {
+  height: 100%;
 }
 
 @media (prefers-color-scheme: light) {

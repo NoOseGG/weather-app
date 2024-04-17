@@ -3,30 +3,18 @@ import React, { PropsWithChildren } from "react";
 import { Container } from "../Container/Container";
 import styled from "styled-components";
 
-const Wrapper = styled.main``;
-
-const Title = styled.div`
-  width: 100;
-  font: var(--heading-lg);
-`;
-
-const SubTitle = styled.div`
-  font: var(--heading-hg);
+const Wrapper = styled.main`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  flex-grow: 1;
 `;
 
 const Main: React.FC<PropsWithChildren> = ({ children }) => {
-  return (
-    <Container>
-      <Wrapper>{children}</Wrapper>
-      <Title>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus
-        eaque ab, voluptate nihil illum repudiandae est tempora quas porro quia
-        vitae tenetur quis ducimus numquam laudantium id corrupti distinctio
-        aperiam?
-      </Title>
-      <SubTitle>Test some</SubTitle>
-    </Container>
-  );
+  return <Wrapper>{children}</Wrapper>;
 };
 
 export default Main;

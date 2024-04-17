@@ -1,7 +1,8 @@
-import { WeatherPage } from "./pages/WeatherPage";
+import { AppRouter } from "./app/AppRouter/AppRouter";
+import { SearchPage } from "./pages/SearchPage";
 
 function App() {
-  return <WeatherPage />;
+  return <AppRouter />;
 }
 
 export default App;

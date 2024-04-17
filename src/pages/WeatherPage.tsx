@@ -1,26 +1,36 @@
-import React, { useEffect } from "react";
-import { Container } from "../components/Container/Container";
-import { useAppDispatch, useAppSelector } from "../hooks/hooks";
-import { doGetWeatherByCity } from "../store/slices/weather.slice";
-import Header from "../components/Header/Header";
-import Main from "../components/Main/Main";
+import React from "react";
+import styled from "styled-components";
+import { Actions } from "../components/Actions/Actions";
+import { TodayInfo } from "../components/TodayInfo/TodayInfo";
+
+const Wrapper = styled.div`
+  width: 100%;
+  height: 100%;
+  padding: 24px;
+  display: flex;
+  gap: 24px;
+`;
+
+const LeftSide = styled.div`
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+`;
+
+const RightSide = styled.div`
+  width: 50%;
+`;
 
 const WeatherPage: React.FC = () => {
-  const { weather } = useAppSelector((state) => state.weather);
-  const dispatch = useAppDispatch();
-
-  useEffect(() => {
-    dispatch(doGetWeatherByCity("Minsk"));
-  }, []);
-  useEffect(() => {
-    console.log(JSON.stringify(weather));
-  }, [weather]);
-
   return (
-    <Container>
-      <Header />
-      <Main></Main>
-    </Container>
+    <Wrapper>
+      <LeftSide>
+        <Actions />
+        <TodayInfo />
+      </LeftSide>
+      <RightSide></RightSide>
+    </Wrapper>
   );
 };
 
