@@ -2,12 +2,13 @@ import React from "react";
 
 import styled from "styled-components";
 
-import icon from '/src/assets/icons-weather/cloudy-day.svg';
+import icon from "../../assets/icons-weather/few-clouds-night.svg";
+import { Temperature } from "./Temperature/Temperature";
 
 const Wrapper = styled.div`
-position: relative;
+  position: relative;
   flex-grow: 1;
-  background-image: url("/src/assets/images-weather/few-clouds-day.png");
+  background-image: url("/src/assets/images-weather/few-clouds-night.png");
   background-size: cover;
   background-repeat: no-repeat;
   border-radius: var(--radii);
@@ -38,12 +39,12 @@ const Time = styled.div`
 `;
 
 const Icon = styled.img`
-    width: 248px;
-    height: 248px;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-`
+  width: 248px;
+  height: 248px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+`;
 
 const TodayInfo: React.FC = () => {
   return (
@@ -55,7 +56,8 @@ const TodayInfo: React.FC = () => {
         </CityInfo>
         <Time>21:40</Time>
       </TopInfo>
-      <Icon src={icon} alt="icon-weather"/>
+      <Temperature />
+      <Icon src={icon} alt="icon-weather" />
     </Wrapper>
   );
 };
