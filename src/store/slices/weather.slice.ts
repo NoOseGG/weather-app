@@ -13,12 +13,12 @@ const initialState: InitialState = {
     location: {
       lat: 0,
       lon: 0,
-      name: "string",
-      region: "string",
-      country: "string",
-      tz_id: "string",
+      name: "",
+      region: "",
+      country: "",
+      tz_id: "",
       localtime_epoch: 0,
-      localtime: "string",
+      localtime: "",
     },
   },
 };

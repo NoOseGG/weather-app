@@ -4,6 +4,7 @@ import styled from "styled-components";
 
 import icon from "../../assets/icons-weather/few-clouds-night.svg";
 import { Temperature } from "./Temperature/Temperature";
+import { useAppSelector } from "../../hooks/hooks";
 
 const Wrapper = styled.div`
   position: relative;
@@ -47,14 +48,18 @@ const Icon = styled.img`
 `;
 
 const TodayInfo: React.FC = () => {
+  const weather = useAppSelector((state) => state.weather.weather);
+
   return (
     <Wrapper>
       <TopInfo>
         <CityInfo>
-          <City>Porto Alegre, RS</City>
-          <Date>Segunda-feira, 15 de maio de 2023</Date>
+          <City>
+            {weather.location.name}, {weather.location.country}
+          </City>
+          <Date>Segunda-feira, {weather.location.localtime.split(" ")[0]}</Date>
         </CityInfo>
-        <Time>21:40</Time>
+        <Time>{weather.location.localtime.split(" ")[1]}</Time>
       </TopInfo>
       <Temperature />
       <Icon src={icon} alt="icon-weather" />

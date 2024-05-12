@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { useAppSelector } from "../../../hooks/hooks";
 
 const Wrapper = styled.div`
   width: 270px;
@@ -37,9 +38,11 @@ const TextWeather = styled.span`
 `;
 
 const Temperature: React.FC = () => {
+  const weather = useAppSelector((state) => state.weather.weather);
+
   return (
     <Wrapper>
-      <Title>28ºc</Title>
+      <Title>ºc</Title>
       <Info>
         <Temperatures>32ºc / 26ºc</Temperatures>
         <Dot />

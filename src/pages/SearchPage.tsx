@@ -1,13 +1,13 @@
 import React, { useEffect } from "react";
-import { useAppDispatch, useAppSelector } from "../hooks/hooks";
+import { useAppSelector } from "../hooks/hooks";
 
 import styled from "styled-components";
 
-import { Search } from "../components/Search/Search";
 import { Container } from "../components/Container/Container";
 import Main from "../components/Main/Main";
 import Header from "../components/Header/Header";
-import { doGetWeatherByCity } from "../store/slices/weather.slice";
+import Search from "../components/Search/Search";
+
 
 const Wrapper = styled.div`
   width: 100%;
@@ -38,11 +38,7 @@ const BlueText = styled.span`
 
 const SearchPage: React.FC = () => {
   const { weather } = useAppSelector((state) => state.weather);
-  const dispatch = useAppDispatch();
 
-  useEffect(() => {
-    dispatch(doGetWeatherByCity("Minsk"));
-  }, []);
   useEffect(() => {
     console.log(JSON.stringify(weather));
   }, [weather]);
