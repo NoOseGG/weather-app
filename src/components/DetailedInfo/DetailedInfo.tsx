@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { DetailedInfoItem } from "./DetailedInfoItem/DetailedInfoItem";
+import { useAppSelector } from "../../hooks/hooks";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -27,6 +28,8 @@ const Group = styled.ul`
 `;
 
 const DetailedInfo: React.FC = () => {
+  const weather = useAppSelector((state) => state.weather.weather);
+
   return (
     <Wrapper>
       <Title> Details of the weather today</Title>
@@ -34,27 +37,48 @@ const DetailedInfo: React.FC = () => {
         <DetailedInfoItem
           icon={"/src/assets/icons/thermometer-simple-light.svg"}
           name="Thermal sensation"
-          value="26ºc"
+          value={`
+              ${
+                weather.current.feelslike_c
+                  ? weather.current.feelslike_c.toString()
+                  : "-"
+              } ºc
+            `}
         />
         <DetailedInfoItem
           icon={"/src/assets/icons/cloud-rain-light.svg"}
           name="Probability of rain"
-          value="5%"
+          value={`
+          ${
+            weather.current?.cloud
+              ? weather.current.cloud.toString()
+              : "-"
+          } %`}
         />
         <DetailedInfoItem
           icon={"/src/assets/icons/wind-light-svg.svg"}
           name="Wind speed"
-          value="8 km/h"
+          value={`
+            ${
+              weather.current?.wind_kph
+                ? weather.current.wind_kph.toString()
+                : "-"
+            } km/h`}
         />
         <DetailedInfoItem
           icon={"/src/assets/icons/drop-light.svg"}
           name="Air humidity"
-          value="40%"
+          value={`
+          ${
+            weather.current?.humidity
+              ? weather.current.humidity.toString()
+              : "-"
+          } %`}
         />
         <DetailedInfoItem
           icon={"/src/assets/icons/sun-dim-light.svg"}
           name="UV index"
-          value="5"
+          value={weather.current.uv ? weather.current.uv.toString() : "-"}
         />
       </Group>
     </Wrapper>

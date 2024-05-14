@@ -24,8 +24,8 @@ const Search: React.FC = () => {
     setQuery(e.target.value);
   };
 
-  const handleSearch = (city: string) => {
-    dispatch(doGetWeatherByCity(city));
+  const handleSearch = (lat: string, lng: string) => {
+    dispatch(doGetWeatherByCity({ lat, lng }));
     navigate("/weather");
   };
 
@@ -43,12 +43,12 @@ const Search: React.FC = () => {
 
   return (
     <>
-      <SearchInput onChange={handleChange} /> 
+      <SearchInput onChange={handleChange} />
       {Boolean(sortedCities.length) && (
         <DropdownContainer>
           {sortedCities.map((city, index) => (
-            <Item onClick={() => handleSearch(city.name)} key={index}>
-              {city.name} ({city.country})
+            <Item onClick={() => handleSearch(city.lat, city.lng)} key={index}>
+              {city.name}, {city.country}
             </Item>
           ))}
         </DropdownContainer>
@@ -76,22 +76,27 @@ const SearchInput = styled.input.attrs((props) => ({
 
 const DropdownContainer = styled.div`
   width: 100%;
-  max-height: 200px;
+  /* max-height: 215px; */
   margin-top: 5px;
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 2px;
   background-color: var(--color-gray-600);
   border-radius: var(--radii);
-  overflow-y: scroll;
+  overflow: hidden;
+  /* overflow-y: scroll; */
 `;
 
 const Item = styled.div`
   width: 100%;
-  padding: 5px;
+  height: 56px;
+  padding: 0 18px;
+  display: flex;
+  align-items: center;
+  background-color: var(--color-gray-500);
   cursor: pointer;
 
   &:hover {
-    background-color: var(--color-gray-500);
+    background-color: var(--color-gray-600);
   }
 `;

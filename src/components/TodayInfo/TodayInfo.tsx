@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import styled from "styled-components";
 
@@ -49,6 +49,10 @@ const Icon = styled.img`
 
 const TodayInfo: React.FC = () => {
   const weather = useAppSelector((state) => state.weather.weather);
+
+  useEffect(() => {
+    console.log(JSON.stringify(weather));
+  }, [weather]);
 
   return (
     <Wrapper>
