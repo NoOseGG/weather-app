@@ -1,6 +1,5 @@
 import React, { PropsWithChildren } from "react";
 
-import { Container } from "../Container/Container";
 import styled from "styled-components";
 
 const Wrapper = styled.main`

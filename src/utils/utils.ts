@@ -2,14 +2,10 @@ import clearDay from "../assets/images-weather/clear-day.png";
 import clearNight from "../assets/images-weather/clear-night.png";
 import cloudyDay from "../assets/images-weather/cloudy-day.png";
 import cloudyNight from "../assets/images-weather/cloudy-night.png";
-import fewCloudsDay from "../assets/images-weather/few-clouds-day.png";
-import fewCloudsNight from "../assets/images-weather/few-clouds-night.png";
 import rainDay from "../assets/images-weather/rain-day.png";
 import rainNight from "../assets/images-weather/rain-night.png";
 import snowDay from "../assets/images-weather/snow-day.png";
 import snowNight from "../assets/images-weather/snow-night.png";
-import stormDay from "../assets/images-weather/storm-day.png";
-import stormNight from "../assets/images-weather/storm-night.png";
 
 const getIconNumber = (code: number) => {
   switch (code) {

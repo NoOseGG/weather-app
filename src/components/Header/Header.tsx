@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import logo from "../../assets/logo.svg";
-import { MEDIA_SIZE } from "../../constants/constants";
 
 const Wrapper = styled.header`
   width: 100%;
@@ -28,8 +27,7 @@ const LogoTitle = styled.div`
   }
 `;
 
-const Header = () => {
-  MEDIA_SIZE;
+const Header: React.FC = () => {
   return (
     <Wrapper>
       <Logo src={logo} alt="logo" />
