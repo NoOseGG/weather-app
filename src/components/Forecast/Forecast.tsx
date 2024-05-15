@@ -23,9 +23,16 @@ const Title = styled.div`
 `;
 
 const Group = styled.ul`
+  width: 100%;
   margin-top: 20px;
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-between;
+
+  @media (max-width: 430px) {
+    
+  }
 `;
 
 const Forecast: React.FC = () => {

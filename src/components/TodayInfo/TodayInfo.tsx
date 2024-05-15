@@ -18,6 +18,11 @@ const Wrapper = styled.div<WrapperProps>`
   background-size: cover;
   background-repeat: no-repeat;
   border-radius: var(--radii);
+
+  @media (max-width: 430px) {
+    width: 100%;
+    height: 304px;
+  }
 `;
 
 const TopInfo = styled.div`
@@ -34,14 +39,26 @@ const CityInfo = styled.div`
 
 const City = styled.div`
   font: var(--heading-md);
+
+  @media (max-width: 430px) {
+    font: var(--heading-sm);
+  }
 `;
 
 const DateWrapper = styled.div`
   font: var(--text-md);
+
+  @media (max-width: 430px) {
+    font: var(--text-xs);
+  }
 `;
 
 const Time = styled.div`
   font: var(--heading-md);
+
+  @media (max-width: 430px) {
+    font: var(--heading-sm);
+  }
 `;
 
 const Icon = styled.img`
@@ -50,6 +67,13 @@ const Icon = styled.img`
   position: absolute;
   bottom: 50px;
   right: 50px;
+
+  @media (max-width: 430px) {
+    width: 80px;
+    height: 80px;
+    bottom: 5px;
+    right: 5px;
+  }
 `;
 
 const TodayInfo: React.FC = () => {
@@ -62,7 +86,8 @@ const TodayInfo: React.FC = () => {
   return (
     <Wrapper
       backgroundUrl={getBackgroundForTodayInfo(
-        weather?.current?.condition?.text
+        weather?.current?.condition?.text,
+        4
       )}
     >
       <TopInfo>

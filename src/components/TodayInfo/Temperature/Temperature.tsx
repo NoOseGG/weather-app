@@ -10,20 +10,42 @@ const Wrapper = styled.div`
   position: absolute;
   left: 32px;
   bottom: 32px;
+
+  @media (max-width: 430px) {
+    left: 5px;
+    bottom: 5px;
+    width: 105px;
+    height: auto;
+    align-items: center;
+  }
 `;
 
 const Title = styled.span`
   font: var(--heading-hg);
+
+  @media (max-width: 430px) {
+    font: var(--heading-xl);
+  }
 `;
 
 const Info = styled.div`
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
+
+  @media (max-width: 430px) {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 const Temperatures = styled.span`
   font: var(--heading-md);
+
+  @media (max-width: 430px) {
+    font: var(--heading-sm);
+  }
 `;
 
 const Dot = styled.span`
@@ -31,10 +53,18 @@ const Dot = styled.span`
   height: 8px;
   border-radius: 8px;
   background-color: var(--color-gray-400);
+
+  @media (max-width: 430px) {
+    display: none;
+  }
 `;
 
 const TextWeather = styled.span`
   font: var(--text-lg);
+
+  @media (max-width: 430px) {
+    font: var(--text-sm);
+  }
 `;
 
 const Temperature: React.FC = () => {

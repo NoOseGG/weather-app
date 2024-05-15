@@ -14,6 +14,11 @@ const Wrapper = styled.li`
 const Icon = styled.img`
   width: 32px;
   height: 32px;
+
+  @media (max-width: 430px) {
+    width: 24px;
+    height: 24px;
+  }
 `;
 
 const Name = styled.span`
@@ -26,6 +31,10 @@ const Value = styled.span`
   flex-grow: 1;
   text-align: end;
   font: var(--heading-md);
+
+  @media (max-width: 430px) {
+    font: var(--heading-sm);
+  }
 `;
 
 type Props = {

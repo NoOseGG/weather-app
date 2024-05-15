@@ -8,23 +8,49 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 12px;
+
+  @media (max-width: 430px) {
+    padding: 2px;
+  }
 `;
+
 const Name = styled.div`
   font: var(--heading-xs);
+
+  @media (max-width: 430px) {
+    display: none;
+  }
 `;
 
 const Icon = styled.img`
   width: 68px;
   height: 68px;
+
+  @media (max-width: 430px) {
+    width: 56px;
+    height: 56px;
+  }
 `;
 
 const Info = styled.div`
   font: var(--text-sm);
+  text-align: center;
+
+  @media (max-width: 430px) {
+    display: none;
+  }
 `;
 
 const Temperature = styled.div`
   display: flex;
+  flex-direction: row;
   gap: 8px;
+
+  @media (max-width: 430px) {
+    flex-direction: column;
+    gap: 0;
+    align-items: center;
+  }
 `;
 
 const Day = styled.span`

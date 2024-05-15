@@ -17,19 +17,35 @@ const Wrapper = styled.div`
 `;
 
 const WrapperSearch = styled.div`
-  width: 504px;
+  width: 50%;
+
+  @media (max-width: 430px) {
+    width: 90%;
+    margin: 0 auto;
+  }
 `;
 
 const Title = styled.div`
   margin-top: 160px;
   font: var(--heading-lg);
+
+  @media (max-width: 430px) {
+    font: var(--heading-md);
+    text-align: center;
+  }
 `;
 
 const Text = styled.div`
   margin-top: 8px;
   margin-bottom: 54px;
   color: var(--color-gray-200);
-  font: var(--text--lg);
+  font: var(--text-lg);
+
+  @media (max-width: 430px) {
+    font: var(--text--md);
+    text-align: center;
+    
+  }
 `;
 
 const BlueText = styled.span`
