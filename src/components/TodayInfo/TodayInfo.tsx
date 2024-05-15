@@ -2,14 +2,19 @@ import React, { useEffect } from "react";
 
 import styled from "styled-components";
 
-import icon from "../../assets/icons-weather/few-clouds-night.svg";
 import { Temperature } from "./Temperature/Temperature";
 import { useAppSelector } from "../../hooks/hooks";
 
-const Wrapper = styled.div`
+import { getBackgroundForTodayInfo, getUrlFromIcon } from "../../utils/utils";
+
+type WrapperProps = {
+  backgroundUrl: string;
+};
+
+const Wrapper = styled.div<WrapperProps>`
   position: relative;
   flex-grow: 1;
-  background-image: url("/src/assets/images-weather/few-clouds-night.png");
+  background-image: ${(props) => `url("${props.backgroundUrl}")`};
   background-size: cover;
   background-repeat: no-repeat;
   border-radius: var(--radii);
@@ -31,7 +36,7 @@ const City = styled.div`
   font: var(--heading-md);
 `;
 
-const Date = styled.div`
+const DateWrapper = styled.div`
   font: var(--text-md);
 `;
 
@@ -40,11 +45,11 @@ const Time = styled.div`
 `;
 
 const Icon = styled.img`
-  width: 248px;
-  height: 248px;
+  width: 120px;
+  height: 120px;
   position: absolute;
-  bottom: 0;
-  right: 0;
+  bottom: 50px;
+  right: 50px;
 `;
 
 const TodayInfo: React.FC = () => {
@@ -55,18 +60,29 @@ const TodayInfo: React.FC = () => {
   }, [weather]);
 
   return (
-    <Wrapper>
+    <Wrapper
+      backgroundUrl={getBackgroundForTodayInfo(
+        weather?.current?.condition?.text
+      )}
+    >
       <TopInfo>
         <CityInfo>
           <City>
             {weather.location.name}, {weather.location.country}
           </City>
-          <Date>Segunda-feira, {weather.location.localtime.split(" ")[0]}</Date>
+          <DateWrapper>
+            Segunda-feira, {weather.location.localtime.split(" ")[0]}
+          </DateWrapper>
         </CityInfo>
         <Time>{weather.location.localtime.split(" ")[1]}</Time>
       </TopInfo>
       <Temperature />
-      <Icon src={icon} alt="icon-weather" />
+      <Icon
+        src={getUrlFromIcon(
+          weather?.forecast?.forecastday[0]?.day?.condition?.code
+        )}
+        alt="icon-weather"
+      />
     </Wrapper>
   );
 };

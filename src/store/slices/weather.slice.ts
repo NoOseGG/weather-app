@@ -55,8 +55,8 @@ const initialState: InitialState = {
       gust_kph: 0,
     },
     forecast: {
-      forecastday: []
-    }
+      forecastday: [],
+    },
   },
 };
 
@@ -66,7 +66,7 @@ export const doGetWeatherByCity = createAsyncThunk<Weather, RequestData>(
     const response = await weatherApi.get(URL.BASE, {
       params: {
         q: `${lat},${lng}`,
-        days: 5,
+        days: 6,
         hour: 15,
       },
     });

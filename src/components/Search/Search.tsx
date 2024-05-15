@@ -24,8 +24,10 @@ const Search: React.FC = () => {
     setQuery(e.target.value);
   };
 
-  const handleSearch = (lat: string, lng: string) => {
+  const handleSearch = (lat: string, lng: string, name: string) => {
     dispatch(doGetWeatherByCity({ lat, lng }));
+    setQuery(name);
+    setSortedCities([]);
     navigate("/weather");
   };
 
@@ -42,22 +44,32 @@ const Search: React.FC = () => {
   }, [query]);
 
   return (
-    <>
-      <SearchInput onChange={handleChange} />
+    <Container>
+      <SearchInput value={query} onChange={handleChange} />
       {Boolean(sortedCities.length) && (
         <DropdownContainer>
           {sortedCities.map((city, index) => (
-            <Item onClick={() => handleSearch(city.lat, city.lng)} key={index}>
+            <Item
+              onClick={() => handleSearch(city.lat, city.lng, city.name)}
+              key={index}
+            >
               {city.name}, {city.country}
             </Item>
           ))}
         </DropdownContainer>
       )}
-    </>
+    </Container>
   );
 };
 
 export default Search;
+
+const Container = styled.div`
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+`;
 
 const SearchInput = styled.input.attrs((props) => ({
   placeholder: props.placeholder || "Search location",
@@ -75,6 +87,9 @@ const SearchInput = styled.input.attrs((props) => ({
 `;
 
 const DropdownContainer = styled.div`
+  position: absolute;
+  z-index: 1;
+  top: 100%;
   width: 100%;
   /* max-height: 215px; */
   margin-top: 5px;

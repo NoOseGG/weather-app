@@ -1,4 +1,5 @@
 import React from "react";
+
 import styled from "styled-components";
 
 const Wrapper = styled.div`
@@ -39,8 +40,8 @@ type Props = {
   name: string;
   icon: string;
   weather: string;
-  temperatureDay: string;
-  temperatureNight: string;
+  temperatureDay: number;
+  temperatureNight: number;
 };
 
 const ForecastItem: React.FC<Props> = ({
@@ -56,8 +57,8 @@ const ForecastItem: React.FC<Props> = ({
       <Icon src={icon} alt={name} />
       <Info>{weather}</Info>
       <Temperature>
-        <Day>{temperatureDay}</Day>
-        <Night>{temperatureNight}</Night>
+        <Day>{temperatureDay}ºc</Day>
+        <Night>{temperatureNight}ºc</Night>
       </Temperature>
     </Wrapper>
   );
