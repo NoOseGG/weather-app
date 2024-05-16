@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 import { ForecastItem } from "./ForecastItem/ForecastItem";
 import { useAppSelector } from "../../hooks/hooks";
-import { getUrlFromIcon } from "../../utils/utils";
+import { getIconNumber, getUrlFromIcon } from "../../utils/utils";
 
 const Wrapper = styled.div`
   padding: 24px;
@@ -44,7 +44,7 @@ const Forecast: React.FC = () => {
       <Group>
         <ForecastItem
           name="Tommorow"
-          icon={getUrlFromIcon(
+          icon={getIconNumber(
             weather?.forecast?.forecastday[1]?.day?.condition?.code
           )}
           weather={weather?.forecast?.forecastday[1]?.day?.condition?.text}
@@ -53,7 +53,7 @@ const Forecast: React.FC = () => {
         />
         <ForecastItem
           name=" Wednesday"
-          icon={getUrlFromIcon(
+          icon={getIconNumber(
             weather?.forecast?.forecastday[2]?.day?.condition?.code
           )}
           weather={weather?.forecast?.forecastday[2]?.day?.condition?.text}
@@ -62,7 +62,7 @@ const Forecast: React.FC = () => {
         />
         <ForecastItem
           name=" Tuesday"
-          icon={getUrlFromIcon(
+          icon={getIconNumber(
             weather?.forecast?.forecastday[3]?.day?.condition?.code
           )}
           weather={weather?.forecast?.forecastday[3]?.day?.condition?.text}
@@ -71,7 +71,7 @@ const Forecast: React.FC = () => {
         />
         <ForecastItem
           name="Friday"
-          icon={getUrlFromIcon(
+          icon={getIconNumber(
             weather?.forecast?.forecastday[4]?.day?.condition?.code
           )}
           weather={weather?.forecast?.forecastday[4]?.day?.condition?.text}
@@ -80,7 +80,7 @@ const Forecast: React.FC = () => {
         />
         <ForecastItem
           name="Sunday"
-          icon={getUrlFromIcon(
+          icon={getIconNumber(
             weather?.forecast?.forecastday[5]?.day?.condition?.code
           )}
           weather={weather?.forecast?.forecastday[5]?.day?.condition?.text}

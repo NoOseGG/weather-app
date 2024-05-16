@@ -46,7 +46,7 @@ const DetailedInfo: React.FC = () => {
           value={`
               ${
                 weather.current.feelslike_c
-                  ? weather.current.feelslike_c.toString()
+                  ? weather.current.feelslike_c.toFixed().toString()
                   : "-"
               } ºc
             `}

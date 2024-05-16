@@ -5,7 +5,7 @@ import styled from "styled-components";
 import { Temperature } from "./Temperature/Temperature";
 import { useAppSelector } from "../../hooks/hooks";
 
-import { getBackgroundForTodayInfo, getUrlFromIcon } from "../../utils/utils";
+import { getBackgroundForTodayInfo, getIconNumber, getUrlFromIcon } from "../../utils/utils";
 
 type WrapperProps = {
   backgroundUrl: string;
@@ -103,7 +103,7 @@ const TodayInfo: React.FC = () => {
       </TopInfo>
       <Temperature />
       <Icon
-        src={getUrlFromIcon(
+        src={getIconNumber(
           weather?.forecast?.forecastday[0]?.day?.condition?.code
         )}
         alt="icon-weather"

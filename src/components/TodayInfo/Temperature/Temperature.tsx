@@ -72,11 +72,11 @@ const Temperature: React.FC = () => {
 
   return (
     <Wrapper>
-      <Title>{weather.current.temp_c}ºc</Title>
+      <Title>{weather.current.temp_c.toFixed()}ºc</Title>
       <Info>
         <Temperatures>
-          {weather.forecast?.forecastday[0]?.day?.maxtemp_c}ºc /{" "}
-          {weather.forecast?.forecastday[0]?.day?.mintemp_c}ºc
+          {weather.forecast?.forecastday[0]?.day?.maxtemp_c.toFixed()}ºc /{" "}
+          {weather.forecast?.forecastday[0]?.day?.mintemp_c.toFixed()}ºc
         </Temperatures>
         <Dot />
         <TextWeather>{weather.current.condition.text}</TextWeather>

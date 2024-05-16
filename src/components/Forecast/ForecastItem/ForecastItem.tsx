@@ -64,7 +64,7 @@ const Night = styled.span`
 
 type Props = {
   name: string;
-  icon: string;
+  icon: any;
   weather: string;
   temperatureDay: number;
   temperatureNight: number;
@@ -83,8 +83,8 @@ const ForecastItem: React.FC<Props> = ({
       <Icon src={icon} alt={name} />
       <Info>{weather}</Info>
       <Temperature>
-        <Day>{temperatureDay}ºc</Day>
-        <Night>{temperatureNight}ºc</Night>
+        <Day>{temperatureDay?.toFixed()}ºc</Day>
+        <Night>{temperatureNight?.toFixed()}ºc</Night>
       </Temperature>
     </Wrapper>
   );

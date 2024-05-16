@@ -18,6 +18,7 @@ const Wrapper = styled.div`
 
 const WrapperSearch = styled.div`
   width: 50%;
+  height: 100%;
 
   @media (max-width: 430px) {
     width: 90%;

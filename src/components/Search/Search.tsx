@@ -91,15 +91,14 @@ const DropdownContainer = styled.div`
   z-index: 1;
   top: 100%;
   width: 100%;
-  /* max-height: 215px; */
+  max-height: 232px;
   margin-top: 5px;
   display: flex;
   flex-direction: column;
   gap: 2px;
   background-color: var(--color-gray-600);
   border-radius: var(--radii);
-  overflow: hidden;
-  /* overflow-y: scroll; */
+  overflow: auto;
 `;
 
 const Item = styled.div`
