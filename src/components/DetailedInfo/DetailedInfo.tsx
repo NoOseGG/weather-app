@@ -3,6 +3,12 @@ import styled from "styled-components";
 import { DetailedInfoItem } from "./DetailedInfoItem/DetailedInfoItem";
 import { useAppSelector } from "../../hooks/hooks";
 
+import thermometerSimpleLight from "../../assets/icons/thermometer-simple-light.svg";
+import cloudRainLight from "../../assets/icons/cloud-rain-light.svg";
+import windLight from "../../assets/icons/wind-light.svg";
+import dropLight from "../../assets/icons/drop-light.svg";
+import sunDimLight from "../../assets/icons/sun-dim-light.svg";
+
 const Wrapper = styled.div`
   width: 100%;
   padding: 24px;
@@ -35,7 +41,7 @@ const DetailedInfo: React.FC = () => {
       <Title> Details of the weather today</Title>
       <Group>
         <DetailedInfoItem
-          icon={"/src/assets/icons/thermometer-simple-light.svg"}
+          icon={thermometerSimpleLight}
           name="Thermal sensation"
           value={`
               ${
@@ -46,17 +52,13 @@ const DetailedInfo: React.FC = () => {
             `}
         />
         <DetailedInfoItem
-          icon={"/src/assets/icons/cloud-rain-light.svg"}
+          icon={cloudRainLight}
           name="Probability of rain"
           value={`
-          ${
-            weather.current?.cloud
-              ? weather.current.cloud.toString()
-              : "-"
-          } %`}
+          ${weather.current?.cloud ? weather.current.cloud.toString() : "-"} %`}
         />
         <DetailedInfoItem
-          icon={"/src/assets/icons/wind-light-svg.svg"}
+          icon={windLight}
           name="Wind speed"
           value={`
             ${
@@ -66,7 +68,7 @@ const DetailedInfo: React.FC = () => {
             } km/h`}
         />
         <DetailedInfoItem
-          icon={"/src/assets/icons/drop-light.svg"}
+          icon={dropLight}
           name="Air humidity"
           value={`
           ${
@@ -76,7 +78,7 @@ const DetailedInfo: React.FC = () => {
           } %`}
         />
         <DetailedInfoItem
-          icon={"/src/assets/icons/sun-dim-light.svg"}
+          icon={sunDimLight}
           name="UV index"
           value={weather.current.uv ? weather.current.uv.toString() : "-"}
         />
