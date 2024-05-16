@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 import { ForecastItem } from "./ForecastItem/ForecastItem";
 import { useAppSelector } from "../../hooks/hooks";
-import { getIconNumber, getUrlFromIcon } from "../../utils/utils";
+import { getIconNumber } from "../../utils/utils";
 
 const Wrapper = styled.div`
   padding: 24px;

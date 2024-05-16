@@ -5,7 +5,7 @@ import styled from "styled-components";
 import { Temperature } from "./Temperature/Temperature";
 import { useAppSelector } from "../../hooks/hooks";
 
-import { getBackgroundForTodayInfo, getIconNumber, getUrlFromIcon } from "../../utils/utils";
+import { getBackgroundForTodayInfo, getIconNumber} from "../../utils/utils";
 
 type WrapperProps = {
   backgroundUrl: string;
