@@ -1,5 +1,5 @@
 export const URL = {
-  BASE: "http://api.weatherapi.com/v1/forecast.json",
+  BASE: "https://api.weatherapi.com/v1/forecast.json",
 };
 
 export const MEDIA_SIZE = {
